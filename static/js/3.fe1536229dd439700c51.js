@@ -1,2 +1,0 @@
-webpackJsonp([3],{XExl:function(e,t){},lO7g:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var c={render:function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("div",[e._v("\n    Home\n    "),n("button",{on:{click:function(t){e.test()}}},[e._v("test")]),n("br")])},staticRenderFns:[]};var o=n("VU/8")({name:"Home",created:function(){},methods:{test:function(){}}},c,!1,function(e){n("XExl")},"data-v-4aad00f8",null);t.default=o.exports}});
-//# sourceMappingURL=3.fe1536229dd439700c51.js.map
