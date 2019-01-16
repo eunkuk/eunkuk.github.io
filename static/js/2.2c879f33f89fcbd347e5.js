@@ -1,0 +1,2 @@
+webpackJsonp([2],{"5Iau":function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={name:"Error404",created:function(){location.href="/"}},a={render:function(){var e=this.$createElement;return(this._self._c||e)("div",[this._v("404")])},staticRenderFns:[]};var c=n("VU/8")(r,a,!1,function(e){n("te2z")},"data-v-edf8b4d6",null);t.default=c.exports},te2z:function(e,t){}});
+//# sourceMappingURL=2.2c879f33f89fcbd347e5.js.map
