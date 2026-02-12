@@ -20,6 +20,7 @@ Gemfile.lock
 # OS
 .DS_Store
 Thumbs.db
+nul
 
 # Node (if using any JS tools)
 node_modules
