@@ -43,10 +43,10 @@ theme_mode: # [light | dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: "https://github.com/eunkuk.png"
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
-social_preview_image:
+social_preview_image: "https://github.com/eunkuk.png"
 
 # boolean type, the global switch for TOC in posts.
 toc: true
