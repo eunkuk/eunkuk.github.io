@@ -1,0 +1,118 @@
+---
+layout: default
+refactor: true
+---
+
+{% include lang.html %}
+
+<!-- Categories Section -->
+<div id="categories-section" class="mb-4">
+  <h2 class="data-label mb-3">
+    <i class="fas fa-stream fa-fw"></i>
+    <span>Categories</span>
+  </h2>
+
+  {% assign sorted_categories = site.categories | sort %}
+  {% for category in sorted_categories %}
+    {% assign category_name = category[0] %}
+    {% assign category_posts = category[1] %}
+
+    <div class="card categories-card mb-3">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <span class="fw-bold">
+          <a href="{{ site.baseurl }}/categories/{{ category_name | slugify | url_encode }}/"
+             class="text-decoration-none">
+            {{ category_name }}
+          </a>
+        </span>
+        <span class="badge rounded-pill bg-secondary">{{ category_posts.size }}</span>
+      </div>
+      <ul class="list-group list-group-flush">
+        {% for post in category_posts limit:5 %}
+        <li class="list-group-item d-flex justify-content-between align-items-center px-3 py-2">
+          <a href="{{ post.url | relative_url }}" class="text-truncate">
+            {{ post.title }}
+          </a>
+          <small class="text-muted ms-2 text-nowrap">{{ post.date | date: "%Y-%m-%d" }}</small>
+        </li>
+        {% endfor %}
+        {% if category_posts.size > 5 %}
+        <li class="list-group-item text-center py-2">
+          <a href="{{ site.baseurl }}/categories/{{ category_name | slugify | url_encode }}/"
+             class="small text-muted">
+            View all {{ category_posts.size }} posts →
+          </a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
+
+<hr class="mb-4">
+
+<!-- Recent Posts -->
+<h2 class="data-label mb-3">
+  <i class="far fa-clock fa-fw"></i>
+  <span>Recent Posts</span>
+</h2>
+
+{% assign pinned = site.posts | where: 'pin', 'true' %}
+{% assign default = site.posts | where_exp: 'item', 'item.pin != true and item.pin != "true"' %}
+{% assign posts = pinned | concat: default %}
+
+<div id="post-list" class="flex-grow-1 px-xl-1">
+  {% for post in posts %}
+  <article class="card-wrapper card">
+    <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
+      {% if post.image %}
+        {% if post.image.path %}
+          {% assign src = post.image.path %}
+        {% elsif post.image.url %}
+          {% assign src = post.image.url %}
+        {% else %}
+          {% assign src = post.image %}
+        {% endif %}
+        <div class="col-md-5">
+          <img src="{{ src }}" class="img-fluid rounded-start" loading="lazy" alt="{{ post.image.alt | default: post.title }}">
+        </div>
+        <div class="col-md-7">
+      {% else %}
+        <div class="col-12">
+      {% endif %}
+          <div class="card-body d-flex flex-column">
+            <h1 class="card-title my-2 mt-md-0">{{ post.title }}</h1>
+            <div class="card-text post-content mt-0 mb-2">
+              <p>
+                {% include post-description.html %}
+              </p>
+            </div>
+            <div class="post-meta flex-grow-1 d-flex align-items-end">
+              <div class="me-auto">
+                <i class="far fa-calendar fa-fw me-1"></i>
+                {% include datetime.html date=post.date lang=lang %}
+                {% if post.categories.size > 0 %}
+                  <i class="far fa-folder-open fa-fw me-1"></i>
+                  <span class="categories">
+                    {% for category in post.categories %}
+                      {{ category }}
+                      {%- unless forloop.last -%},{%- endunless -%}
+                    {% endfor %}
+                  </span>
+                {% endif %}
+              </div>
+              {% if post.pin %}
+                <div class="pin ms-1">
+                  <i class="fas fa-thumbtack fa-fw"></i>
+                  <span>Pinned</span>
+                </div>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+    </a>
+  </article>
+  {% endfor %}
+</div>
+
+{% include post-paginator.html %}
