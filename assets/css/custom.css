@@ -1,0 +1,76 @@
+/* Custom styles */
+
+/* Sidebar bottom buttons: horizontal alignment */
+#sidebar .sidebar-bottom {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+#sidebar .sidebar-bottom a,
+#sidebar .sidebar-bottom button,
+#sidebar .sidebar-bottom .icon-border {
+  margin-bottom: 0 !important;
+}
+
+/* --- Design Improvements --- */
+
+/* 1. Font: Pretendard */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css");
+
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif !important;
+}
+
+/* 2. Card UI Improvements (Post List) */
+.post-preview {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.post-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+[data-mode="dark"] .post-preview {
+  background-color: #252529;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-mode="dark"] .post-preview:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Sidebar Profile Polish */
+#sidebar .profile-wrapper {
+  margin-bottom: 2rem;
+}
+
+#sidebar #avatar {
+  border-radius: 35% !important;
+  border: 2px solid var(--sidebar-active-color);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+}
+
+#sidebar #avatar:hover {
+  transform: rotate(10deg) scale(1.05);
+}
+
+/* 4. General Polish */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(128, 128, 128, 0.4);
+  border-radius: 4px;
+}
