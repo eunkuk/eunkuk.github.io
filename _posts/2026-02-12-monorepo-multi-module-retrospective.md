@@ -70,7 +70,6 @@ public class Gene {
 유전자검사 결과는 틀리면 안 되는 데이터다. `Gene` 엔티티의 상태 전이 — 검사 시작 → 검사 완료 → QC 승인 → 최종 확정 — 이 로직에 버그가 있어서 한쪽만 수정하고 다른 쪽을 까먹으면, Admin에서는 QC 승인이 되는데 Service에서는 이전 로직으로 동작하는 상황이 올 수 있다.
 
 > 멀티레포의 장점은 팀이 클 때 극대화된다. 팀 간 독립성, 책임 분리, 독립 배포 주기가 의미를 가지려면 각 레포를 담당하는 사람이 따로 있어야 한다. 1인 개발자에게 멀티레포는 "똑같은 일을 두 번 하는 구조"였다.
-{: .prompt-warning }
 
 ### 공유 라이브러리라는 선택지
 
@@ -111,7 +110,6 @@ include 'project-admin-be'
 include 'project-service-be'
 include 'project-app-common'
 ```
-{: file="settings.gradle" }
 
 6개 모듈. 의존 관계는 안쪽에서 바깥쪽으로 흐른다.
 
@@ -140,7 +138,6 @@ project-service-be      ← 사용자 API (인바운드 어댑터: 순수 REST)
 핵심은 `project-domain`이 `project-infra`나 `project-admin-be`를 모른다는 점이다. 도메인 로직에 인프라 코드가 스며드는 걸 Gradle 의존성이 컴파일 타임에 막아준다. 패키지 컨벤션이 아니라 빌드 시스템이 아키텍처를 강제한다.
 
 > Gradle 모듈 분리는 헥사고날 아키텍처의 의존성 방향을 "규칙"이 아닌 "강제"로 만드는 장치다. 도메인 모듈에서 인프라를 import하면 컴파일 에러가 난다. 의지가 아니라 빌드가 지켜준다.
-{: .prompt-tip }
 
 ## 전환 후 뭐가 달라졌나
 
@@ -159,7 +156,6 @@ dependencies {
     implementation 'org.apache.poi:poi-ooxml:5.2.3'
 }
 ```
-{: file="project-admin-be/build.gradle (발췌)" }
 
 ```groovy
 // service-be/build.gradle
@@ -170,7 +166,6 @@ dependencies {
     // Thymeleaf? POI? 없다. 필요 없으니까.
 }
 ```
-{: file="project-service-be/build.gradle (발췌)" }
 
 `Gene` 엔티티의 상태 전이 로직을 수정하면 `project-domain`에서 한 번만 고치면 된다. 이전처럼 두 프로젝트를 열고 같은 파일을 찾아서 같은 수정을 하는 일이 사라졌다.
 
@@ -198,7 +193,6 @@ public class GenePlanFacade {
     }
 }
 ```
-{: file="project-app-common/.../GenePlanFacade.java (구조 예시)" }
 
 Admin에서 검사 결과를 확인할 때도, Service에서 사용자가 앱으로 결과를 조회할 때도, `GenePlanFacade`를 호출한다. 이용권 → 키트 → 유전자 데이터 → 검사 결과로 이어지는 도메인 탐색 로직이 한 곳에만 존재한다.
 
@@ -275,7 +269,6 @@ public class VoucherFacade {
 회원 도메인도 마찬가지다. `MemberFacade` 하나가 아니라 `MemberFacade`(등록·수정), `MemberQueryFacade`(조회·검색), `MemberProfileFacade`(프로필)로 나눴다.
 
 > Facade는 "공통 로직을 모으는 곳"이 아니라 "하나의 유스케이스를 조율하는 곳"이다. 하나의 Facade에 DomainService 주입이 5개가 넘어가면 책임이 섞이고 있다는 신호다. 쪼개야 할 때다.
-{: .prompt-warning }
 
 ## 대신 포기한 것들
 
@@ -311,7 +304,6 @@ public class VoucherFacade {
 모듈이 많아지면 "A에서 B의 뭔가가 필요한데, B도 A의 뭔가가 필요한" 상황이 생긴다. Gradle은 이걸 빌드 에러로 잡아주지만, 그걸 해결하기 위해 공통 모듈로 빼거나 구조를 재설계해야 하는 경우가 있다. 두 프로젝트로 분리되어 있을 때는 이런 고민 자체가 없었다.
 
 > 모듈 간 순환 의존이 발생하면 보통 책임 분리가 잘못된 신호다. 당장은 귀찮지만, 순환 의존을 해결하는 과정에서 구조가 더 깔끔해지는 경우가 많다.
-{: .prompt-info }
 
 ## 현재 규모
 
@@ -339,7 +331,6 @@ public class VoucherFacade {
 > 1. **코드 중복 제거** — 엔티티, Repository, 공통 로직을 한 곳에서 관리
 > 2. **컴파일 타임 경계 강제** — 헥사고날 아키텍처의 의존성 방향을 빌드가 강제
 > 3. **Atomic Change** — 하나의 커밋으로 전체 모듈에 변경을 반영
-{: .prompt-info }
 
 팀이 있었다면 멀티레포도 괜찮았을 것이다. 각 레포를 담당하는 사람이 있고, 코드 리뷰로 경계 위반을 잡아줄 사람이 있었다면. 하지만 혼자서는 그 모든 역할을 동시에 할 수 없었고, 구조가 대신 해줘야 했다.
 
