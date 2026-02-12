@@ -1,8 +1,16 @@
 /* Custom styles */
 
 /* Sidebar bottom buttons: horizontal alignment */
-.sidebar-bottom {
+#sidebar .sidebar-bottom {
   flex-direction: row !important;
-  justify-content: center;
+  flex-wrap: nowrap !important;
+  justify-content: flex-start;
+  align-items: center;
   gap: 0.25rem;
+
+  a,
+  button,
+  .icon-border {
+    margin-bottom: 0 !important;
+  }
 }
