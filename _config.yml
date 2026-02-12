@@ -8,6 +8,9 @@ lang: ko-KR
 # Change to your timezone
 timezone: Asia/Seoul
 
+# Publish future-dated posts (GitHub Actions builds in UTC)
+future: true
+
 # jekyll-seo-tag settings
 title: eun
 tagline: 여러가지 적는 블로그
