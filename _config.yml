@@ -33,6 +33,8 @@ social:
 analytics:
   google:
     id: # fill in your Google Analytics ID
+  goatcounter:
+    id: # e.g. eunkuk (-> https://eunkuk.goatcounter.com)
 
 # Prefer color scheme setting.
 # Options:
@@ -53,7 +55,17 @@ social_preview_image: "https://github.com/eunkuk.png"
 toc: true
 
 comments:
-  provider: # [disqus | utterances | giscus]
+  provider: giscus # [disqus | utterances | giscus]
+  giscus:
+    repo: eunkuk/eunkuk.github.io
+    repo_id: R_kgDOI4ws3A
+    category: Announcements
+    category_id: DIC_kwDOI4ws3M4C2VGt
+    mapping: pathname
+    strict: 0
+    input_position: bottom
+    lang: ko
+    reactions_enabled: 1
 
 # Self-hosted static assets, optional
 assets:
