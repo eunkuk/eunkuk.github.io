@@ -1,0 +1,144 @@
+# The Site Configuration
+# Import the theme
+theme: jekyll-theme-chirpy
+
+# The language of the webpage
+lang: ko-KR
+
+# Change to your timezone
+timezone: Asia/Seoul
+
+# Publish future-dated posts (GitHub Actions builds in UTC)
+future: true
+
+# jekyll-seo-tag settings
+title: eun
+tagline: 경험을 LLM으로 기록.
+description: >-
+  개발과 기술에 대한 이야기를 기록합니다.
+
+# Fill in the protocol & hostname for your site.
+url: "https://eunkuk.github.io"
+
+github:
+  username: eunkuk
+
+social:
+  name: eunkuk
+  links:
+    - https://github.com/eunkuk
+    - https://www.linkedin.com/in/eunkuk
+
+# Web Analytics Settings
+analytics:
+  google:
+    id: # fill in your Google Analytics ID
+  goatcounter:
+    id: # e.g. eunkuk (-> https://eunkuk.goatcounter.com)
+
+# Prefer color scheme setting.
+# Options:
+#   light  - Use the light color scheme
+#   dark   - Use the dark color scheme
+theme_mode: # [light | dark]
+
+# The CDN endpoint for media resources.
+img_cdn:
+
+# the avatar on sidebar, support local or CORS resources
+avatar: "https://github.com/eunkuk.png"
+
+# The URL of the site-wide social preview image used in SEO `og:image` meta tag.
+social_preview_image: "https://github.com/eunkuk.png"
+
+# boolean type, the global switch for TOC in posts.
+toc: true
+
+comments:
+  provider: giscus # [disqus | utterances | giscus]
+  giscus:
+    repo: eunkuk/eunkuk.github.io
+    repo_id: R_kgDOI4ws3A
+    category: Announcements
+    category_id: DIC_kwDOI4ws3M4C2VGt
+    mapping: pathname
+    strict: 0
+    input_position: bottom
+    lang: ko
+    reactions_enabled: 1
+
+# Self-hosted static assets, optional
+assets:
+  self_host:
+    enabled: # boolean, keep empty means false
+
+pwa:
+  enabled: true
+
+paginate: 10
+
+# ------------ The following options are not recommended to be modified ------------------
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _tabs
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - "*.config.js"
+  - package*.json
+  - nul
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
