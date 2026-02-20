@@ -2,7 +2,7 @@
 title: "Python 스크립트 하나로 돌리던 유전자 분석을 데스크톱 앱으로 만들기까지 — GeneTitan Agent 회고"
 date: 2026-02-25 22:00:00 +0900
 categories: [Dev, Architecture]
-tags: [tauri, rust, typescript, bioinformatics, desktop-app, pipeline-automation]
+tags: [tauri, rust, typescript, bioinformatics, desktop-app, pipeline-automation, retrospective]
 description: "array_db.py 하나로 돌리던 GeneTitan 마이크로어레이 분석 파이프라인을, Tauri + Rust + React로 데스크톱 앱을 만들게 된 1인 개발자의 기록."
 ---
 

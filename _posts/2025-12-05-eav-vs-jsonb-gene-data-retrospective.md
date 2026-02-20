@@ -2,7 +2,7 @@
 title: "유전자검사 결과 저장: JSON → EAV 마이그레이션 회고"
 date: 2025-12-05 22:00:00 +0900
 categories: [Dev, Database]
-tags: [eav, jsonb, mariadb, postgresql, database-design, spring-boot, jpa, migration]
+tags: [eav, jsonb, mariadb, postgresql, database-design, spring-boot, jpa, migration, retrospective]
 description: "유전자검사 서비스에서 W-GRS 점수를 JSON 컬럼에서 EAV 패턴으로 전환한 경험을 기록한다. PostgreSQL JSONB도 검토했지만, MariaDB + EAV를 선택한 이유와 그 결과를 정리한다."
 ---
 

@@ -2,7 +2,7 @@
 title: "Figma MCP로 홈페이지를 만들어본 회고 — 디자인 디테일을 코드로 살리는 삽질의 기록"
 date: 2026-01-10 22:00:00 +0900
 categories: [Dev, AI]
-tags: [figma, mcp, claude-code, react, responsive, css-in-js]
+tags: [figma, mcp, claude-code, react, responsive, css-in-js, retrospective]
 description: "Figma 디자인을 픽셀 단위로 코드에 옮기는 건 기능 구현과는 다른 영역이었다. Figma MCP + Claude Code 조합을 실무에 써본 3주간의 기록."
 ---
 

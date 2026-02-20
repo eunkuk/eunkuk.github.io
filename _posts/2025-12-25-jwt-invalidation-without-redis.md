@@ -2,7 +2,7 @@
 title: "JWT 로그아웃했는데 토큰이 살아있다 — Redis 없이 무효화하기"
 date: 2025-12-25 22:00:00 +0900
 categories: [Dev, Backend]
-tags: [jwt, spring-boot, security, caffeine, cache, logout, token, redis, java]
+tags: [jwt, spring-boot, security, caffeine, cache, logout, token, redis, java, retrospective]
 description: "JWT는 stateless라 로그아웃해도 토큰이 유효하다. Redis 없이 lastLogoutDatetime + Caffeine 캐시로 해결한 과정을 정리한다."
 ---
 

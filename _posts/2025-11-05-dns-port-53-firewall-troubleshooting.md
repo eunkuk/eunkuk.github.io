@@ -2,7 +2,7 @@
 title: "소켓은 되는데 왜 Google Chat API만 안 되는 거야 — DNS 포트 차단 트러블슈팅"
 date: 2025-11-05 22:00:00 +0900
 categories: [Dev, Infra]
-tags: [dns, firewall, troubleshooting, network, idc]
+tags: [dns, firewall, troubleshooting, network, idc, retrospective]
 description: "IDC 환경에서 소켓 통신은 정상인데 에러 모니터링과 Google Chat API만 실패하는 현상의 원인을 추적한 기록."
 ---
 

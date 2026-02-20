@@ -2,7 +2,7 @@
 title: "풀 CQRS 없이 Command/Query를 분리한 방법 — Facade 패턴으로 경량 CQRS"
 date: 2026-01-05 22:00:00 +0900
 categories: [Dev, Architecture]
-tags: [cqrs, facade, spring-boot, transaction, ddd, read-model, query-separation]
+tags: [cqrs, facade, spring-boot, transaction, ddd, read-model, query-separation, retrospective]
 description: "이벤트 소싱 없이도 Command와 Query를 분리할 수 있다. Facade 레벨에서 경량 CQRS를 적용한 과정과 readOnly 트랜잭션, Cross-Domain 읽기 전용 조합 패턴을 기록한다."
 ---
 

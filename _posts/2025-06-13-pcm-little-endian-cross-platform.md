@@ -2,7 +2,7 @@
 title: "PCM 오디오가 무음으로 재생됐다 — Little-Endian과 Big-Endian"
 date: 2025-06-13 22:00:00 +0900
 categories: [Dev, Backend]
-tags: [java, javascript, react-native, pcm, audio, endianness, little-endian, base64, android]
+tags: [java, javascript, react-native, pcm, audio, endianness, little-endian, base64, android, retrospective]
 description: "Android 네이티브 모듈에서 PCM 오디오를 Base64로 JS에 넘겼는데 무음. Java ByteBuffer의 기본 Big-Endian과 JS의 Little-Endian이 달라서였다. Endianness란 무엇이고 왜 중요한지 정리한다."
 ---
 

@@ -2,7 +2,7 @@
 title: "NestJS 백엔드 보일러플레이트를 만들었다 — 매번 반복하는 기반 작업을 모듈로 묶기까지"
 date: 2025-04-25 22:00:00 +0900
 categories: [Dev, Backend]
-tags: [nestjs, typescript, boilerplate, jwt, redis, swagger, typeorm, winston, s3, architecture]
+tags: [nestjs, typescript, boilerplate, jwt, redis, swagger, typeorm, winston, s3, architecture, retrospective]
 description: "Java/Spring Boot 개발자가 NestJS를 찍먹하며 만든 백엔드 보일러플레이트. 인증/예외처리/로깅/파일업로드를 모듈로 묶고, Spring Boot와 비교하며 느낀 점을 정리한다."
 ---
 

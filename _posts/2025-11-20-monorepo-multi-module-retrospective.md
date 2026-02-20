@@ -2,7 +2,7 @@
 title: "1인 개발자가 모노레포 + 6모듈 구조를 선택하기까지 — Spring Boot 멀티모듈 회고"
 date: 2025-11-20 22:00:00 +0900
 categories: [Dev, Architecture]
-tags: [monorepo, multi-module, gradle, spring-boot, hexagonal-architecture]
+tags: [monorepo, multi-module, gradle, spring-boot, hexagonal-architecture, retrospective]
 description: "두 개의 프로젝트를 따로 운영하다가 모노레포 + 멀티모듈로 전환한 1인 개발자의 기록. 왜 합쳤고, 헥사고날 아키텍처를 어떻게 모듈 구조에 녹였는지."
 ---
 

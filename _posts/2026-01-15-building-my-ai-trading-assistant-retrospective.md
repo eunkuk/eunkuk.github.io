@@ -2,7 +2,7 @@
 title: "노트북 포맷 기념으로 OpenClaw 셋팅해본 회고"
 date: 2026-01-15 22:00:00 +0900
 categories: [Dev, AI]
-tags: [openclaw, telegram, automation, news-bot, setup]
+tags: [openclaw, telegram, automation, news-bot, setup, retrospective]
 description: "OpenClaw를 텔레그램으로 원격 제어하고, 스킬로 뉴스 요약 봇까지 만든 셋팅 회고"
 ---
 

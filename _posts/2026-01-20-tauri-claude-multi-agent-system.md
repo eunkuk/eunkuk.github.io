@@ -2,7 +2,7 @@
 title: "Tauri + Claude CLI로 만든 Multi-Agent 프로젝트 관리 도구"
 date: 2026-01-20 22:00:00 +0900
 categories: [Dev, AI]
-tags: [tauri, rust, claude, multi-agent, streaming, session-management, desktop-app]
+tags: [tauri, rust, claude, multi-agent, streaming, session-management, desktop-app, retrospective]
 description: "9개 전문 AI 에이전트를 오케스트레이션하는 데스크톱 도구를 Tauri(Rust) + React로 개발한 경험을 기록한다. CLI 추상화, 실시간 스트리밍, 세션 관리까지."
 ---
 

@@ -2,7 +2,7 @@
 title: "SQS·Redis 대신 Hazelcast Embedded — 분산 메시징 경량화 검토기"
 date: 2025-03-09 22:00:00 +0900
 categories: [Dev, Architecture]
-tags: [hazelcast, distributed-system, messaging, spring-boot, poc, sqs, redis]
+tags: [hazelcast, distributed-system, messaging, spring-boot, poc, sqs, redis, retrospective]
 description: "외부 인프라 없이 JVM 임베디드로 분산 큐·맵·토픽을 돌릴 수 있을까? SQS와 Redis 대신 Hazelcast를 검토한 PoC 기록."
 ---
 

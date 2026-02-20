@@ -2,7 +2,7 @@
 title: "6모듈 멀티모듈에서 인프라를 다시 세우다 — 마이그레이션 회고 (4) 인증, 보안, 인프라"
 date: 2026-02-21 22:00:00 +0900
 categories: [Dev, Migration]
-tags: [spring-boot, jwt, security, fcm, caffeine, bucket4j, undertow, infrastructure]
+tags: [spring-boot, jwt, security, fcm, caffeine, bucket4j, undertow, infrastructure, retrospective, series]
 description: "PHP 세션 기반 인증에서 JWT 3종 토큰으로, 중복된 알림 로직에서 추상화된 알림 체계로, 수동 히스토리에서 Hibernate Envers로. 마이그레이션에서 보이지 않는 인프라 비용을 기록한다."
 ---
 

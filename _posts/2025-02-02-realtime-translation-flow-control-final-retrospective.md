@@ -2,7 +2,7 @@
 title: "1:N 강의 동시 번역 시스템 PoC 회고"
 date: 2025-02-02 22:00:00 +0900
 categories: [Dev, Backend]
-tags: [realtime, translation, sse, vad, ordering, spring-boot, concurrency, tts, redis]
+tags: [realtime, translation, sse, vad, ordering, spring-boot, concurrency, tts, redis, retrospective]
 description: "실시간 동시 번역 시스템을 구현하며 겪은 핵심 문제와 해결 과정을 정리했다. 포인트는 모델이 아니라 Order/Commit/Boundary 설계였다."
 ---
 
