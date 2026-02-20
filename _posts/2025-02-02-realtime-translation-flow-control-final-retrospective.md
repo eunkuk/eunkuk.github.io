@@ -39,12 +39,11 @@ description: "실시간 동시 번역 시스템을 구현하며 겪은 핵심 �
 ```text
 Speaker Client (VAD)
   -> Ingest API (chunk + sequence)
-  -> Session Buffer (in-memory queue)
-  -> Ordered Drain (expected sequence)
-  -> STT
+  -> STT (비동기 병렬, 순서 무관)
+  -> Session Buffer (STT 결과를 sequence 기준 재정렬)
   -> Sentence Commit (isFinal OR 5s silence from last VAD)
-  -> Translation (per language async)
-  -> TTS (per language async)
+  -> Translation (문장 순서 락으로 보장)
+  -> TTS (문장 순서 락으로 보장)
   -> SSE Broadcast
   -> Redis History (late join / reconnect)
 ```
@@ -78,9 +77,10 @@ Speaker Client (VAD)
 
 그래서 처리 모델을 이렇게 바꿨다.
 
-1. API 스레드는 enqueue만 수행한다.
-2. 세션 버퍼는 `expected sequence`부터 drain한다.
-3. 정렬/커밋 상태 갱신은 세션 단위로 원자성 보장한다.
+1. API 스레드는 청크를 받아 STT를 비동기로 즉시 호출한다.
+2. STT 결과는 세션 버퍼에서 sequence 기준으로 재정렬한다.
+3. 커밋 상태 갱신은 세션 단위로 원자성 보장한다.
+4. 번역/TTS 실행 순서는 락으로 보장한다.
 
 이때 비관적 접근(세션 단위 락)을 고민한 이유는 명확했다.
 
@@ -91,8 +91,9 @@ Speaker Client (VAD)
 다만 락을 길게 잡으면 지연이 폭증한다.  
 그래서 원칙을 고정했다.
 
-- 락은 상태 정리에만 짧게 사용
-- 느린 외부 호출(STT/번역/TTS)은 락 밖에서 비동기 실행
+- STT는 순서 무관 비동기 — 결과를 sequence 기준으로 재정렬
+- 번역/TTS는 문장 순서가 핵심 — 실행 순서를 락으로 보장
+- 락은 상태 정리 + 번역/TTS 순서 보장에 짧게 사용
 
 ## 커밋 정책이 시스템을 살렸다: isFinal + 5초 무음
 
@@ -156,11 +157,12 @@ Speaker Client (VAD)
 
 이 구간이 성능과 정합성의 충돌 지점이었다.
 
-- 락 안에서 해야 하는 것: 버퍼 삽입, expected seq 갱신, drain 판단, 커밋 상태 갱신
-- 락 밖으로 빼야 하는 것: STT 호출, 번역 호출, TTS 호출
+- 락 밖 (순서 무관): STT 호출 — 청크별 독립 처리, 비동기 병렬로 호출하고 결과를 재정렬
+- 락 안에서 해야 하는 것: 버퍼 재정렬, 커밋 상태 갱신, 번역/TTS 실행 순서 확정
+- 번역/TTS: 문장 ORDER 소팅이 핵심 → 실행 순서를 락으로 보장
 
-락을 넓게 잡으면 안전하지만 지연이 폭증하고, 락을 좁히면 빠르지만 레이스가 터진다.  
-그래서 "세션 단위로 짧게 잠그고, 느린 I/O는 전부 락 밖 비동기"로 고정했다.
+락을 넓게 잡으면 안전하지만 지연이 폭증하고, 락을 좁히면 빠르지만 레이스가 터진다.
+핵심은 STT처럼 순서 무관한 호출은 락 밖에서 병렬로 돌리고, 번역/TTS처럼 문장 순서가 중요한 호출은 락으로 실행 순서를 보장하는 것이었다.
 
 ### 3) 5초 무음은 기술 상수가 아니라 서비스 정책이었다
 
@@ -217,5 +219,5 @@ Speaker Client (VAD)
 
 1. FE order는 힌트일 뿐, 서버가 최종 질서를 보장해야 한다.
 2. 커밋 규칙(`isFinal` + `5초 무음`)은 품질/지연/비용의 경계선이다.
-3. 락은 상태 정리에만 짧게, 느린 I/O는 락 밖으로 빼야 실시간성이 산다.
+3. STT는 순서 무관 비동기로 병렬 처리하고, 번역/TTS는 문장 순서를 락으로 보장해야 실시간성이 산다.
 4. 실시간 번역 시스템은 모델 이전에 흐름 제어 시스템이다.
