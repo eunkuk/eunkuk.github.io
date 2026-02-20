@@ -1,7 +1,7 @@
 ---
 title: "1인 개발로 마이그레이션을 끝내며 — 마이그레이션 회고 (5) 교훈과 수치"
 date: 2026-02-23 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Dev, Migration]
 tags: [retrospective, migration, spring-boot, php, lessons-learned, 1-person-dev]
 description: "PHP CodeIgniter에서 Spring Boot로의 마이그레이션을 마무리하며. 최종 수치 비교, 마이그레이션하지 않은 것들, 1인 개발의 현실, 그리고 다시 한다면 다르게 할 것들."
 ---

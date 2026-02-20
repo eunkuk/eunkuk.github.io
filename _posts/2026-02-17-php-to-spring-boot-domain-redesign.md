@@ -1,7 +1,7 @@
 ---
 title: "115개 PHP 모델을 44개 엔티티로 재설계하다 — 마이그레이션 회고 (2) 도메인 재설계"
 date: 2026-02-17 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Dev, Migration]
 tags: [spring-boot, jpa, ddd, entity, domain-service, migration]
 description: "PHP CodeIgniter의 115개 모델을 Spring Boot 44개 엔티티로 재설계한 과정. 테이블 1:1 모델에서 DDD 기반 도메인 서비스 계층까지, 마이그레이션은 번역이 아니라 재설계였다."
 ---

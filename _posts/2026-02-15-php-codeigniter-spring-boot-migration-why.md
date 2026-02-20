@@ -1,7 +1,7 @@
 ---
 title: "PHP CodeIgniter 프로젝트를 Spring Boot로 옮기기까지 — 마이그레이션 회고 (1) 왜 다시 만들었나"
 date: 2026-02-15 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Dev, Migration]
 tags: [php, codeigniter, spring-boot, migration, legacy, retrospective]
 description: "유전자검사 서비스의 PHP CodeIgniter 프로젝트를 Spring Boot로 마이그레이션한 이유. 12개 API 컨트롤러, 96개 Admin 컨트롤러, 115개 모델의 레거시를 왜 다시 만들어야 했는지 기록한다."
 ---
