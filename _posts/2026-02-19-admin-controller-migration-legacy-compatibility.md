@@ -1,7 +1,7 @@
 ---
 title: "96개 PHP 어드민 컨트롤러를 42개로 재구성하다 — 마이그레이션 회고 (3) 컨트롤러 전환과 신규 API"
 date: 2026-02-19 22:00:00 +0900
-categories: [Dev, Backend]
+categories: [Dev, Architecture]
 tags: [spring-boot, rest-api, legacy, migration, admin, controller, swagger]
 description: "PHP 96개 어드민 컨트롤러를 Spring Boot 42개로 재구성하면서, 28개 전환 컨트롤러와 14개 신규 REST API를 설계한 과정을 기록한다."
 ---
