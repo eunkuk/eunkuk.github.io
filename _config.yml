@@ -13,7 +13,7 @@ future: true
 
 # jekyll-seo-tag settings
 title: eun
-tagline: 경험을 LLM으로 기록.
+tagline: 개발 경험과 설계 시행착오를 LLM으로 정리
 description: >-
   개발과 기술에 대한 이야기를 기록합니다.
 
