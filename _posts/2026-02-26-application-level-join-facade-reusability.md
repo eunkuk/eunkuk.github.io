@@ -1,7 +1,7 @@
 ---
 title: "Facade로 공용 로직을 뽑았더니 JOIN이 사라졌다 — Application-level Join의 발견"
 date: 2026-02-26 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Architecture]
 tags: [spring-boot, facade, join, query-optimization, ddd, aggregate, application-level-join, retrospective]
 description: "Facade에 공용 로직을 모으면서 발견한 것 — Repository에서 JOIN이 필요 없어진다. Application-level Join과 RDBMS Join의 트레이드오프, Facade 재활용성이 쿼리 전략까지 바꾸는 과정을 기록한다."
 ---

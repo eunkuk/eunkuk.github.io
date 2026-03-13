@@ -1,7 +1,7 @@
 ---
 title: "테스트 코드 때문에 개같았던 경험 — 레거시 환경, ArchUnit, E2E 전환기"
 date: 2026-03-08 22:00:00 +0900
-categories: [Dev, Testing]
+categories: [Testing]
 tags: [spring-boot, testing, tdd, archunit, e2e-test, mybatis, h2, legacy, retrospective]
 description: "MyBatis + JPA 혼합 환경에서 H2 테스트가 깨지고, Controller가 몰래 계층을 위반하고, MockMvc 테스트는 아무것도 못 잡았다. 삽질 끝에 정착한 테스트 전략을 기록한다."
 ---

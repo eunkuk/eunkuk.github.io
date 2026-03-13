@@ -1,7 +1,7 @@
 ---
 title: "스트래티지 패턴을 못 말했던 이유 — 설계 감각과 설계 언어는 다르다"
 date: 2026-03-16 23:10:00 +0900
-categories: [Dev, Architecture]
+categories: [Architecture]
 tags: [design-pattern, strategy-pattern, llm, abstraction, interview, software-design]
 description: "면접에서 Strategy Pattern을 바로 설명하지 못했던 경험을 돌아본다. 추상화는 하고 있었지만 이름이 없었다. 패턴을 영단어처럼 외워야 하는지, LLM 시대에 설계 언어는 어떤 의미가 있는지 정리한다."
 ---

@@ -1,7 +1,7 @@
 ---
 title: "OpenClaw 이후 방향이 바뀌었다 — Paperclip을 보며 고정 에이전트와 오케스트레이션을 다시 본 기록"
 date: 2026-03-11 14:30:00 +0900
-categories: [Dev, AI]
+categories: [AI]
 tags: [paperclip, openclaw, tailscale, self-hosted, ai-agent, orchestration, retrospective]
 description: "OpenClaw 이후 Paperclip을 로컬에 붙여보며, 내 관심사가 더 똑똑한 단일 에이전트가 아니라 고정 에이전트를 운영하는 오케스트레이션 레이어 쪽으로 옮겨갔다는 걸 정리한 기록."
 ---

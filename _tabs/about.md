@@ -36,6 +36,7 @@ order: 4
 
 ### 아키텍처 / 설계
 
+- [1:N 강의 동시 번역 시스템 PoC 회고](/posts/realtime-translation-flow-control-final-retrospective/)
 - [Spring Boot DDD — Facade는 왜 Domain이 아닌 Application 레이어에 있는가](/posts/spring-boot-facade-transaction-architecture/)
 - [DomainService vs Facade — 이 로직은 어디에 둬야 하는가](/posts/domain-service-vs-facade-boundary/)
 - [Method Naming → @Query → QueryDSL — 쿼리 복잡도에 따른 Repository 전략](/posts/repository-query-tier-selection/)

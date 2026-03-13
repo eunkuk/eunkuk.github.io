@@ -31,7 +31,7 @@ tags: [태그1, 태그2]
 |------|------|------|
 | `title` | 글 제목 | `"Docker 입문 가이드"` |
 | `date` | 작성일시 (+0900 = KST) | `2026-02-12 14:00:00 +0900` |
-| `categories` | 카테고리 (최대 2단계) | `[Dev, Docker]` |
+| `categories` | 카테고리 (최대 2단계) | `[Architecture, DDD]` |
 | `tags` | 태그 (여러 개 가능) | `[docker, container, devops]` |
 
 ### 선택 항목
@@ -40,7 +40,7 @@ tags: [태그1, 태그2]
 ---
 title: "글 제목"
 date: 2026-02-12 14:00:00 +0900
-categories: [Dev]
+categories: [Architecture]
 tags: [example]
 description: "검색/미리보기에 표시될 요약"    # SEO 설명
 author: eunkuk                                # 작성자 (기본값 사용 시 생략)
@@ -190,18 +190,19 @@ graph LR
 카테고리는 최대 2단계까지 지원된다.
 
 ```yaml
-categories: [대분류]           # 1단계만
-categories: [Dev, Docker]     # 2단계 (Dev > Docker)
+categories: [Architecture]    # 1단계만
+categories: [Architecture, DDD] # 2단계 예시
 ```
 
 예시 카테고리 구조:
 ```
-Blog          - 블로그 관련
-Dev           - 개발 전반
-  ├── Setup   - 환경 설정
-  ├── Docker  - Docker/컨테이너
-  └── Web     - 웹 개발
-TIL           - Today I Learned
+Architecture  - 설계, 계층, 패턴, 구조 선택
+Backend       - API, 인증, 실시간 처리, 서버 구현
+Database      - 데이터 모델링, 저장 구조, 쿼리
+Infra         - 배포, 네트워크, 운영 이슈
+Migration     - 레거시 전환, 호환 계층, 재설계
+AI            - LLM, 에이전트, 자동화 툴링
+Testing       - 테스트 전략, 검증, 품질 관리
 ```
 
 ---

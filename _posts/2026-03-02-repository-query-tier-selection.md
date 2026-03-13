@@ -1,7 +1,7 @@
 ---
 title: "Method Naming → @Query → QueryDSL — 쿼리 복잡도에 따른 Repository 전략"
 date: 2026-03-02 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Architecture]
 tags: [spring-boot, jpa, querydsl, repository, query-optimization, retrospective]
 description: "Repository 쿼리를 어떤 방식으로 구현할 것인가. Method Naming, @Query, QueryDSL 세 단계의 선택 기준과, 실제로 전환한 사례를 기록한다."
 ---

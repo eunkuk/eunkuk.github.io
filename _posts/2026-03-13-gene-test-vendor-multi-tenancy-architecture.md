@@ -1,7 +1,7 @@
 ---
 title: "유전자검사 서비스에 벤더사가 붙기 시작했다 — 멀티테넌시를 고민할 시점"
 date: 2026-03-13 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Architecture]
 tags: [multi-tenancy, tenant, vendor, gene-testing, saas, spring-boot, database-design]
 description: "유전자검사 서비스에 벤더사가 붙기 시작하면, 단일 운영사를 전제로 한 구조는 오래 버티기 어렵다. 멀티테넌시의 개념, 우리 상황에서 어디까지 필요한지, 그리고 실제로 어떤 접근을 선택했는지를 정리한다."
 ---

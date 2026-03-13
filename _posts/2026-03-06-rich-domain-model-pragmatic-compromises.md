@@ -1,7 +1,7 @@
 ---
 title: "Rich Domain Model을 실제로 적용하면서 타협한 것들"
 date: 2026-03-06 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Architecture]
 tags: [spring-boot, ddd, entity, rich-domain-model, jpa, retrospective]
 description: "@Setter 금지, @Builder 금지, 정적 팩토리 필수 — 원칙은 알겠는데 실전에서는 타협이 필요했다. Rich Domain Model을 적용하면서 지킨 것과 양보한 것을 기록한다."
 ---

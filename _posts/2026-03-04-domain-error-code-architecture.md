@@ -1,7 +1,7 @@
 ---
 title: "DomainException에서 ApiResponse까지 — 에러 코드 아키텍처를 설계한 과정"
 date: 2026-03-04 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Architecture]
 tags: [spring-boot, error-handling, exception, ddd, aop, clean-architecture, retrospective]
 description: "도메인 계층은 HTTP를 모르고, API 계층은 비즈니스 규칙을 모른다. 두 세계를 잇는 에러 코드 아키텍처를 설계한 과정을 기록한다."
 ---

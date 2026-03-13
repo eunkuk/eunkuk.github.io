@@ -1,7 +1,7 @@
 ---
 title: "DomainService vs Facade — 이 로직은 어디에 둬야 하는가"
 date: 2026-02-28 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Architecture]
 tags: [spring-boot, ddd, domain-service, facade, clean-architecture, layered-architecture, retrospective]
 description: "Facade에 넣을지 DomainService에 넣을지 매번 고민된다. 순수 비즈니스 로직과 유스케이스 조율의 경계를 정한 과정을 기록한다."
 ---

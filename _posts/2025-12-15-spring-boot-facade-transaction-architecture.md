@@ -1,7 +1,7 @@
 ---
 title: "Spring Boot DDD — Facade는 왜 Domain이 아닌 Application 레이어에 있는가"
 date: 2025-12-15 22:00:00 +0900
-categories: [Dev, Architecture]
+categories: [Architecture]
 tags: [spring-boot, ddd, facade, transaction, clean-architecture, layered-architecture, retrospective]
 description: "6모듈 모노레포에서 Facade 패턴의 위치, 트랜잭션 경계, Entity 생성 패턴에 대한 아키텍처 결정 과정을 기록한다. Claude V2 vs Gemini V3 논쟁부터 최종 V6 결정까지."
 ---
