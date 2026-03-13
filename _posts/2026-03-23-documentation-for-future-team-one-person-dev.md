@@ -149,7 +149,7 @@ Jira 같은 일정 관리 툴이라도 팀 단위로 굴러가고 있었다면, 
 | PRD | Product Requirements Document | 무엇을 왜 만드는가 |
 | SRS | Software Requirements Specification | 더 정형화된 요구사항 명세 |
 | ERD | Entity Relationship Diagram | DB 관계 구조 |
-| API Spec | API Specification | API 명세 |
+| API Spec | API Specification | API 명세 (OpenAPI / Swagger / ReDoc 등) |
 
 ### 3) 운영 문서
 
@@ -207,6 +207,10 @@ Jira 같은 일정 관리 툴이라도 팀 단위로 굴러가고 있었다면, 
 
 `ERD`와 `API Spec`은 말 그대로 구조를 보여준다.
 설명보다 빠르다.
+
+특히 `API Spec`은 꼭 별도 문서를 손으로 길게 쓴다는 뜻은 아니다.
+이미 Swagger/OpenAPI를 쓰고 있다면 그걸 기준 스펙으로 삼을 수 있고, ReDoc 같은 도구를 붙이면 읽는 사람 입장에서 더 보기 좋은 문서 형태로도 풀 수 있다.
+중요한 건 형식보다도, **API의 현재 상태와 의도를 일관되게 남기는 것**이다.
 
 `Runbook`은 운영 문서 중 가장 실용적이다.
 장애가 났을 때 "어디부터 확인할지"만 정리돼 있어도 대응 품질이 달라진다.

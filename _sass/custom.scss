@@ -25,27 +25,42 @@ body {
 }
 
 /* 2. Card UI Improvements (Post List) */
-.post-preview {
-  background-color: var(--card-bg); /* Use theme variable if available, or fallback */
+#post-list .card-wrapper {
+  background-color: var(--card-bg);
   border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Add shadow and lift effect on hover */
-.post-preview:hover {
+#post-list .card-wrapper:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark mode adjustments for cards */
-[data-mode="dark"] .post-preview {
-  background-color: #252529; /* Slightly lighter than pure black background */
+#post-list .post-preview {
+  position: relative;
+  z-index: 0;
+  background: transparent;
+  border: 0;
+  border-radius: inherit;
+  box-shadow: none;
+  margin-bottom: 0;
+  overflow: hidden;
+
+  &::before {
+    inset: 0;
+    border-radius: inherit;
+  }
+}
+
+[data-mode="dark"] #post-list .card-wrapper {
+  background-color: #252529;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
-[data-mode="dark"] .post-preview:hover {
+
+[data-mode="dark"] #post-list .card-wrapper:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
