@@ -1,0 +1,6 @@
+- type: linkedin
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/eunkuk/"
+
+- type: github
+  icon: "fab fa-github"

@@ -1,0 +1,26 @@
+# Bundler cache
+.bundle
+vendor
+
+# Jekyll generated
+_site
+.jekyll-cache
+.jekyll-metadata
+
+# Ruby
+*.gem
+Gemfile.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+nul
+
+# Node (if using any JS tools)
+node_modules

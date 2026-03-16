@@ -1,0 +1,38 @@
+---
+layout: page
+# All the Tags of posts.
+---
+
+<div id="tags" class="d-flex flex-wrap mx-xl-2">
+  {% assign tags = '' | split: '' %}
+  {% for t in site.tags %}
+    {% assign tags = tags | push: t[0] %}
+  {% endfor %}
+
+  {% assign sorted_tags = tags | sort_natural %}
+
+  {% comment %} Sort by post count descending {% endcomment %}
+  {% assign max = 0 %}
+  {% for t in sorted_tags %}
+    {% assign cnt = site.tags[t].size %}
+    {% if cnt > max %}{% assign max = cnt %}{% endif %}
+  {% endfor %}
+
+  {% assign result = '' | split: '' %}
+  {% for i in (1..max) reversed %}
+    {% for t in sorted_tags %}
+      {% if site.tags[t].size == i %}
+        {% assign result = result | push: t %}
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+
+  {% for t in result %}
+    <div>
+      <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
+        {{ t -}}
+        <span class="text-muted">{{ site.tags[t].size }}</span>
+      </a>
+    </div>
+  {% endfor %}
+</div>
